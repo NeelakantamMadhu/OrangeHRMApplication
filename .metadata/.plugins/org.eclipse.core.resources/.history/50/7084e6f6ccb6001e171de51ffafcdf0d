@@ -1,0 +1,54 @@
+package com.Arrays;
+
+import java.util.Iterator;
+
+
+
+public class MultiDimensionArraysExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Syntax:
+
+		//	dataType arrayName[][] = new dataType[size][size];
+		
+
+		//String madhu[][]=new String[7][2];
+		byte Madhu[][]=new byte[3][3];
+		
+		        Madhu[0][0]='2';
+				Madhu[0][1]='3';
+				Madhu[0][2]='4';
+				
+				Madhu[1][0]='8';
+				Madhu[1][1]='2';
+				Madhu[1][2]='4';
+				
+				Madhu[2][0]='0';
+				Madhu[2][1]='7';
+				Madhu[2][2]='5';
+		
+		for(byte rowIndex=0; rowIndex<=3; rowIndex++) 
+		{
+			for(byte rowOfCell=1; rowOfCell<=3; rowOfCell++)
+			{
+				System.out.print(Madhu[rowIndex][rowOfCell]);
+			}
+			System.out.println();
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

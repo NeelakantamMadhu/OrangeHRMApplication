@@ -1,0 +1,50 @@
+package com.ValidatingURLAddress;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ValidatingURLAddress {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Automating ChromeBrowser
+		
+				System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+				
+			    ChromeDriver chromeBrowser =new ChromeDriver();
+			   
+			    //Navigating to Google Application HomePage
+					
+				chromeBrowser.get("http:// songs.com");
+				
+				//google.com- should have in the URL Address
+				
+				//String Expected_GoolgleHomepageURLAddress="google.com";
+				//System.out.println("The Expected URL Address of the Google Homepage is:- "+Expected_GoolgleHomepageURLAddress);
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

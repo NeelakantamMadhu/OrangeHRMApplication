@@ -1,0 +1,45 @@
+package com.ValidatingTitle;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ValidatingTitle_BingHomePage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	//Automating ChromeBrowser
+		
+		System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+		
+		ChromeDriver chromeBrowser=new ChromeDriver();
+		
+		
+		//Navigating to Bing Application HomePage
+		
+		chromeBrowser.get("http://Bing.com");
+		 
+		String expected_BingHomePage="Bing";   //should Be Bing
+		System.out.println("The Expected Bing homepage Title is :-"+expected_BingHomePage);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

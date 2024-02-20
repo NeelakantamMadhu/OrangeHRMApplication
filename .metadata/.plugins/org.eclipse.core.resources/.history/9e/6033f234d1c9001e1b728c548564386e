@@ -1,0 +1,705 @@
+package com.OrangeHRMApplication;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+public class AddEmployeeTest extends BaseTest{
+	
+	
+	
+	String expected_OrangeHRMApplicationLogInPageText;
+	By orangeHRMApplicationLogInPageTextProperty;
+	WebElement orangeHRMApplicationLogInPage;
+
+	String actual_OrangeHRMApplicationLogInPageText;
+
+	
+	
+
+	Row logInTestDataRow;
+	Cell userNameTestDataCell;
+	FileInputStream logInTestDataFile;
+	XSSFWorkbook workBook;
+	
+
+	FileOutputStream testResultFile ;
+	
+	
+	
+   XSSFSheet Sheet;
+	
+	
+	
+	@Test(priority = 1,description = "Validating OrangeHRM Application LogIn WebPage")
+	public void logInPageTest() throws IOException {
+		
+		
+
+		logInTestDataFile= new FileInputStream("./src/com/Excel/AddEmployeeSingleData.xlsx");
+		workBook= new XSSFWorkbook(logInTestDataFile);
+		Sheet= workBook.getSheet("Sheet2");
+
+		
+		// Validating Title
+		String expectd_OrangeHRMApplicationLogInPage="OrangeHRM";
+		System.out.println(" The expected title of the OrangeHRM Application LogIn page is :-  "+expectd_OrangeHRMApplicationLogInPage);
+		
+		String actual_OrangeHRMApplicationLogInPage=driver.getTitle();
+		System.out.println("The actual title of the OrangeHRM Application LogIn Page is  :-  "+actual_OrangeHRMApplicationLogInPage);
+		
+		
+		if(actual_OrangeHRMApplicationLogInPage.equals(expectd_OrangeHRMApplicationLogInPage)) {
+			
+			System.out.println(" Successfully Navigated to OrangeHRM Application LogIn WebPage - PASS");
+			Sheet.getRow(1).createCell(4).setCellValue(actual_OrangeHRMApplicationLogInPage);
+			Sheet.getRow(1).createCell(5).setCellValue("PASS");
+			
+		}
+		else {
+			System.out.println("Failed to Navigated to OrangeHRM Application LogIn WebPage - FAIL");
+			Sheet.getRow(1).createCell(4).setCellValue("NOT Match - "+actual_OrangeHRMApplicationLogInPage);
+			Sheet.getRow(1).createCell(5).setCellValue("FAIL");
+		}
+		
+		
+
+	
+	// validating Url
+
+	// Validating Text - LOGIN Panel
+
+	expected_OrangeHRMApplicationLogInPageText="LOGIN Panel";
+	System.out.println(" The Expected Text of the OrangeHRM Application LogIN Page is :- "+expected_OrangeHRMApplicationLogInPageText);
+
+	// id="logInPanelHeading"
+	orangeHRMApplicationLogInPageTextProperty=By.id("logInPanelHeading");
+	orangeHRMApplicationLogInPage=driver.findElement(orangeHRMApplicationLogInPageTextProperty);
+
+	actual_OrangeHRMApplicationLogInPageText=orangeHRMApplicationLogInPage.getText();
+	System.out.println(" The Actual Text of the OrangeHRM Application LogIN Page is :- "+actual_OrangeHRMApplicationLogInPageText);
+
+	if(actual_OrangeHRMApplicationLogInPageText.equals(expected_OrangeHRMApplicationLogInPageText))
+	{
+	System.out.println(" Text Found - Successfully Navigated to OrangeHRM Application LogIn Page - PASS ");
+	Sheet.getRow(1).createCell(1).setCellValue(actual_OrangeHRMApplicationLogInPageText);
+	Sheet.getRow(1).createCell(2).setCellValue("PASS");
+	}
+	else
+	{
+	System.out.println(" Expected LogIn Page Text Not Found - Failed to Navigate to OrangeHRM Application LogIn Page - FAIL");
+	Sheet.getRow(1).createCell(1).setCellValue("NOT Match  - "+actual_OrangeHRMApplicationLogInPageText);
+	Sheet.getRow(1).createCell(2).setCellValue("FAIL");
+	}
+
+
+	}
+	
+//*****************************************************************************************************************************************************	
+	
+	XSSFSheet logInTestDataSheet;
+
+	@Test(priority=2,description="Validating OrangeHRM Application LogIn Functionality")
+	public void logInTest() throws IOException, InterruptedException
+	{
+
+	logInTestDataRow=Sheet.getRow(1);
+	userNameTestDataCell=logInTestDataRow.getCell(6);
+
+	String userNameTestData=userNameTestDataCell.getStringCellValue();
+
+
+	// String userNameTestData="Madhu"; // Test Data
+	By userNamePoperty=By.id("txtUsername"); // Property of an element is identified and assigned to a variable
+	WebElement userName=driver.findElement(userNamePoperty); // finding a WebElement with the property in the current Webpage
+	userName.sendKeys(userNameTestData); // Performing an operation on the identified WebElement
+
+
+	Cell passwordTestDataCell=logInTestDataRow.getCell(7);
+	String passwordTestData=passwordTestDataCell.getStringCellValue();
+	// <input name="txtPassword" id="txtPassword" autocomplete="off" type="password">
+
+
+	// String passwordTestData="Livetech@123";
+	By passwordProperty=By.name("txtPassword");
+	WebElement password=driver.findElement(passwordProperty);
+	password.sendKeys(passwordTestData);
+
+
+
+	// <input type="submit" name="Submit" class="button" id="btnLogin" value="LOGIN">
+	By logInButtonProperty=By.className("button");
+	WebElement logInButton=driver.findElement(logInButtonProperty);
+	logInButton.click();
+
+
+Thread.sleep(2000);
+	}
+	
+	
+	//*****************************************************************************************************************************************************	
+	
+	
+	
+	WebElement welComeAdmin;
+	@Test(priority=3,description="Validating OrangeHRM Application HomePage WebPage")
+	public void homePageTest() throws IOException
+	{
+
+	// Validating Title
+	String expected_OrangeHRMAplicationHOMEPageTitle="OrangeHRM";
+	System.out.println(" The expected title of the OrangeHRm Application HOME Page is :- "+expected_OrangeHRMAplicationHOMEPageTitle);
+
+	String actual_OrangeHRMAplicationHOMEPageTitle=driver.getTitle();
+	System.out.println(" The actual title of the OrangeHRm Application HOME Page is :- "+actual_OrangeHRMAplicationHOMEPageTitle);
+
+	if(actual_OrangeHRMAplicationHOMEPageTitle.equals(expected_OrangeHRMAplicationHOMEPageTitle))
+	{
+	System.out.println("Successfully Navigated to OrangeHRM Application HOME WebPage - PASS");
+	
+	}
+	else
+	{
+	System.out.println("Failed to Navigate to OrangeHRM Application HOME WebPage - FAIL");
+	}
+
+	// Validating OrangeHRM Application Home Page - expected Text - Welcome (should have)
+
+	// Properties of WelCome Admin Element
+	// <a href="#" id="welcome" class="panelTrigger">Welcome Admin</a>
+
+	// By welComeAdminProperty=By.id("welcome");
+	//By welComeAdminProperty=By.linkText("Welcome Admin");
+	// By welComeAdminProperty=By.partialLinkText("Welcome");
+	By welComeAdminProperty=By.partialLinkText("Admin");
+
+	welComeAdmin=driver.findElement(welComeAdminProperty);
+
+	String expected_OrangeHRMApplicationHomePageText="Welcome";
+	System.out.println(" The Expected Text of the OrangeHRM Application HomePage is :- "+expected_OrangeHRMApplicationHomePageText);
+
+	String actual_OrangeHRMApplicationHomePageText=welComeAdmin.getText();
+	System.out.println(" The Actual Text of the OrangeHRM Application HomePage is :- "+actual_OrangeHRMApplicationHomePageText);
+
+	if(actual_OrangeHRMApplicationHomePageText.contains(expected_OrangeHRMApplicationHomePageText))
+	{
+	System.out.println(" Successfully Navigated to OrangeHRM Application HomePage - PASS ");
+	Sheet.getRow(1).createCell(9).setCellValue(actual_OrangeHRMApplicationHomePageText);
+	Sheet.getRow(1).createCell(10).setCellValue("PASS ");
+
+	//Row newRow=logInTestDataSheet.createRow(1);
+//	Cell testRowOfCell=logInTestDataRow.createCell(2);
+	//testRowOfCell.setCellValue("Successfully Navigated to OrangeHRM Application HomePage - PASS");
+
+	}
+	else
+	{
+	System.out.println("Failed to Navigate to OrangeHRM Application HomePage - FAIL ");
+	Sheet.getRow(1).createCell(9).setCellValue("Not Match the title "+actual_OrangeHRMApplicationHomePageText);
+	Sheet.getRow(1).createCell(10).setCellValue("Not Match the webpage FAIL");
+	
+
+	
+	}
+
+	}
+
+	//*****************************************************************************************************************************************************	
+	
+
+	@Test(priority=4,description="Validating OrangeHRM Application Home Page PIM Functionality ")
+	public void pimTest()
+	{
+
+	// id="menu_pim_viewPimModule"
+
+	By pimProperty=By.id("menu_pim_viewPimModule");
+	WebElement pim=driver.findElement(pimProperty);
+
+	Actions pimAction = new Actions(driver);
+	pimAction.moveToElement(pim).build().perform();
+
+	}
+
+	
+	//*****************************************************************************************************************************************************	
+	
+	
+	@Test(priority=5,description="Validating OrangeHRM Application Home Page PIM - AddEmployee Functionality ")
+	public void pimAddEmployeeTest()
+	{
+	// id="menu_pim_addEmployee"
+	By addEmployeeProperty=By.id("menu_pim_addEmployee");
+	WebElement pimAddEmployee=driver.findElement(addEmployeeProperty);
+	pimAddEmployee.click();
+
+
+	}
+
+	//*****************************************************************************************************************************************************	
+	
+
+	
+	@Test(priority=6,description="Validating OrangeHRM Application AddEmployee WebPage Test ")
+	public void AddEmployeeWebPageTest()
+	{
+	System.out.println("*********** Add Employee WebPage Test Successfull ***********");
+	
+	String expected_AddEmployeeWebPage="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/pim/addEmployee";
+	System.out.println(" The expected Add Employee WebPage is  "+expected_AddEmployeeWebPage);
+	
+	String actual_AddEmployeeWebPage=driver.getCurrentUrl();
+	System.out.println(" The actual Add Employee WebPage is  "+actual_AddEmployeeWebPage);
+	
+	if(actual_AddEmployeeWebPage.equals(expected_AddEmployeeWebPage)) {
+		
+		System.out.println(" The Add Employee URL is Matched - PASS");
+	}
+	else {
+		System.out.println(" The Add Employee URL is NOT Matched - FAIL");
+	}
+	
+	
+	
+	}
+
+
+	//*****************************************************************************************************************************************************	
+	
+	
+	String employeeIdNumber;
+	String firstName_TestData;
+	
+	
+	@Test(priority=7,description="Validating OrangeHRM Application AddEmployee Functionality  Test ")
+	public void AddEmployeeTest() throws InterruptedException, IOException
+	{
+
+		
+		
+		
+	//   *********** Expected AddEmployeeText - Full Name (should be same)	
+			
+			String Expect_AddAdminText="Full Name";
+			System.out.println("The Expect OrangeHrm AddAdmin page Text is :-  " +Expect_AddAdminText);
+			
+			//<label class="hasTopFieldHelp">Full Name</label>
+			By fullNameProperty=By.className("hasTopFieldHelp");
+			WebElement fullName=driver.findElement(fullNameProperty);
+			
+			String Actual_AddEmployeeText=fullName.getText();
+			System.out.println("The Actual OrangeHrm AddAdmin Page text is :-  "+Actual_AddEmployeeText);
+			
+			if(Actual_AddEmployeeText.equals(Expect_AddAdminText)) 
+			{
+				System.out.println("The Add Employee Page Text is Match ;-  PASS");
+				Sheet.getRow(1).createCell(12).setCellValue(Actual_AddEmployeeText);
+				Sheet.getRow(1).createCell(13).setCellValue("PASS");
+			}
+			else {
+				System.out.println("The Add Employee Page Text is NOT Match :-  FAIL");
+				Sheet.getRow(1).createCell(12).setCellValue("NOT Match Text - "+Actual_AddEmployeeText);
+				Sheet.getRow(1).createCell(13).setCellValue("FAIL");
+			}
+			
+			
+			
+		
+		
+		
+		
+	// id="firstName"
+    String firstName_TestData=logInTestDataRow.getCell(14).getStringCellValue();	
+	By firstNameProperty=By.id("firstName");
+	WebElement firstName=driver.findElement(firstNameProperty);
+	firstName.sendKeys(firstName_TestData);
+
+
+	// working with the Keys of the KeyBoard
+   
+	Actions keyBoardActions = new Actions(driver);
+	keyBoardActions.sendKeys(Keys.TAB).build().perform();
+
+	// MiddleName
+	String middleName_TestData=logInTestDataRow.getCell(15).getStringCellValue();
+	keyBoardActions.sendKeys(middleName_TestData).build().perform();
+
+	// LastName
+	String lastName_TestData=logInTestDataRow.getCell(16).getStringCellValue();
+	keyBoardActions.sendKeys(Keys.TAB).build().perform();
+	keyBoardActions.sendKeys(lastName_TestData).build().perform();
+
+
+	// EmployeeID
+	// <input class="formInputText valid" maxlength="10" type="text" name="employeeId" value="0083" id="employeeId">
+	By employeeIdProprety=By.id("employeeId");
+	WebElement employeeId=driver.findElement(employeeIdProprety);
+	String employeeIdNumber=employeeId.getAttribute("value");
+	System.out.println(" The employee Id number is :-  "+employeeIdNumber);
+	Sheet.getRow(1).createCell(17).setCellValue(employeeIdNumber);
+	
+	
+	keyBoardActions.sendKeys(Keys.TAB).build().perform();
+
+	// Photograph
+	keyBoardActions.sendKeys(Keys.TAB).build().perform();
+
+	// Enter Key of KeyBoard
+	keyBoardActions.sendKeys(Keys.ENTER).build().perform();
+
+	Thread.sleep(5000);
+	java.lang.Runtime.getRuntime().exec("./AutoItTestScripts/Nikky1.exe");
+	
+	Thread.sleep(5000);
+
+	// <input type="button" class="" id="btnSave" value="Save">
+
+	By saveButtonProperty=By.id("btnSave");
+	WebElement saveButton=driver.findElement(saveButtonProperty);
+
+	saveButton.click();
+
+
+	}
+	
+	
+
+	//*****************************************************************************************************************************************************	
+	
+	
+	@Test(priority=8,description="Validating OrangeHRM Application Add Employee WebPage Test Data Fileds  Test ")
+	public void AddEmployee_TestFileds() {
+		
+		
+	//   *********** Expected Personal Details Text After Click on Save - Full Name (should be same)	
+		
+		String Expect_PersonalDetailsPageText="Full Name";
+		System.out.println("The Expect OrangeHrm AddAdmin page Text is :-  " +Expect_PersonalDetailsPageText);
+		
+		
+		//<label for="Full_Name" class="hasTopFieldHelp">Full Name</label>
+		By PersonalDetailsPage_FullNameProperty=By.className("hasTopFieldHelp");
+		WebElement PersonalDetailsPage_FullName=driver.findElement(PersonalDetailsPage_FullNameProperty);
+		
+		String Actual_PersonalDetailsPageText=PersonalDetailsPage_FullName.getText();
+		System.out.println("The Actual OrangeHrm AddAdmin Page text is :-  "+Actual_PersonalDetailsPageText);
+		
+		if(Actual_PersonalDetailsPageText.equals(Expect_PersonalDetailsPageText)) 
+		{
+			System.out.println("The Add Employee Page Text is Match ;-  PASS");
+			Sheet.getRow(1).createCell(19).setCellValue(Actual_PersonalDetailsPageText);
+			Sheet.getRow(1).createCell(20).setCellValue("PASS");
+		}
+		else {
+			System.out.println("The Add Employee Page Text is NOT Match :-  FAIL");
+			Sheet.getRow(1).createCell(19).setCellValue("NOT Match Text - "+Actual_PersonalDetailsPageText);
+			Sheet.getRow(1).createCell(20).setCellValue("FAIL");
+		}
+				
+	
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	// Validing Personal Details Webpage
+
+	@Test(priority=9,description="Validating OrangeHRM Application Personal Details WebPage  Test ")
+	public void personalDetailsWebPageTest()
+	{
+	System.out.println(" **** Successfully Navigaed to Persoanl Details WebPage **********");
+	
+	
+	String expect_PersonalDetailsWebPage="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/pim/viewPersonalDetails/empNumber/0079";
+	System.out.println(" The Expected Add Employee personal Details WebPage is : -  "+expect_PersonalDetailsWebPage);
+
+	String actual_personalDetailsWebPage=driver.getCurrentUrl();
+	System.out.println(" The Actual Add Employee Personal Details WebPage is :-  "+actual_personalDetailsWebPage);
+	
+	
+	if(actual_personalDetailsWebPage.equals(expect_PersonalDetailsWebPage)) {
+		
+		System.out.println(" Successfully Navigated to Add Employee Personal Details WebPage is - PASS");
+	}
+	else {
+		System.out.println(" Failed to Navigated to NOT Add Employee Personal details WebPage is - FAIL ");
+	}
+	
+	
+	
+	
+	
+	
+	//----------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+// --->>>>> This Names is Actual TestData in the Add Employee Page
+	
+	     
+//--------------->>>>>>>>>>>>>>>>>>>>      After saving FirstName
+		
+		
+				     
+		//<input value="Madhu" type="text" name="personal[txtEmpFirstName]" class="block default editable" maxlength="30" 
+		//title="First Name" id="personal_txtEmpFirstName" disabled="disabled">
+					  
+		By afterSaveFirstNameProperty= By.id("personal_txtEmpFirstName");
+		WebElement afterSaveFirstName = driver.findElement(afterSaveFirstNameProperty);
+		String Actual_FirstName=afterSaveFirstName.getAttribute("value");
+				     
+//--------------->>>>>>>>>>>>>>>>>>>>      After saving MiddleName		
+				   
+		//<input value="Sai" type="text" name="personal[txtEmpMiddleName]" class="block default editable" maxlength="30" 
+		//title="Middle Name" id="personal_txtEmpMiddleName" disabled="disabled"> 
+				      
+		By afterSaveMiddleNameProperty= By.id("personal_txtEmpMiddleName");
+		WebElement  afterSaveMiddleName= driver.findElement(afterSaveMiddleNameProperty); 
+		String Actual_MiddleName=afterSaveMiddleName.getAttribute("value");  
+				     
+//--------------->>>>>>>>>>>>>>>>>>>>      After saving LastName
+				   
+		//<input value="Chandu" type="text" name="personal[txtEmpLastName]" class="block default editable" maxlength="30" 
+		//title="Last Name" id="personal_txtEmpLastName" disabled="disabled">
+				     
+		By afterSaveLastNameProperty=By.id("personal_txtEmpLastName");
+		WebElement afterSaveLastName=driver.findElement(afterSaveLastNameProperty);
+		String Actual_LastName=afterSaveLastName.getAttribute("value");
+				   
+//--------------->>>>>>>>>>>>>>>>>>>>      After saving EmployeeId
+				   
+		//<input value="0021" type="text" name="personal[txtEmployeeId]" maxlength="10" class="editable" 
+		//id="personal_txtEmployeeId" disabled="disabled">
+				   
+	    By afterSaveEmployeeIdPrperty=By.id("personal_txtEmployeeId");
+	    WebElement afterSaveEmployeeId=driver.findElement(afterSaveEmployeeIdPrperty);
+		String Actual_EmployeeId= afterSaveEmployeeId.getAttribute("value");
+				   
+//----------->>>>>>>>>>>>>>>>   Comparing Actual & Expected  FristName		   
+				   
+		if(Actual_FirstName.equals(firstName_TestData)) 
+		{
+	       System.out.println("After saving the FirstName are same :-  PASS");
+	       Sheet.getRow(1).createCell(21).setCellValue(Actual_FirstName);
+	       Sheet.getRow(1).createCell(22).setCellValue("PASS");
+		}
+		else
+		{
+			System.out.println("After saving the FirstName are NOT same :- FAIL ");
+			Sheet.getRow(1).createCell(21).setCellValue("NOT Match - "+Actual_FirstName);
+		    Sheet.getRow(1).createCell(22).setCellValue("FAIL");
+		}
+				   
+				   
+//----------->>>>>>>>>>>>>>>>   Comparing Actual & Expected  MiddleName  
+
+		if(Actual_MiddleName.equals("Sai")) 
+		{
+			System.out.println("After saving the MiddleName are same :-  PASS");
+			Sheet.getRow(1).createCell(23).setCellValue(Actual_MiddleName);
+		    Sheet.getRow(1).createCell(24).setCellValue("PASS");
+		}
+		else 
+		{
+			System.out.println("After saving the MiddleName are NOT same :- FAIL ");
+			Sheet.getRow(1).createCell(23).setCellValue("NOT Match - "+Actual_MiddleName);
+		    Sheet.getRow(1).createCell(24).setCellValue("FAIL");
+		}
+				   
+//----------->>>>>>>>>>>>>>>>   Comparing Actual & Expected  LastName		   
+				   
+		if(Actual_LastName.equals("Chandu")) 
+		{
+			System.out.println("After saving the LastName are same :-  PASS");
+			Sheet.getRow(1).createCell(25).setCellValue(Actual_LastName);
+		    Sheet.getRow(1).createCell(26).setCellValue("PASS");
+		}
+		else 
+		{
+			System.out.println("After saving the LastName are NOT same :- FAIL ");
+			Sheet.getRow(1).createCell(25).setCellValue("NOT Match - "+Actual_LastName);
+		    Sheet.getRow(1).createCell(26).setCellValue("FAIL");
+		}
+				   
+//----------->>>>>>>>>>>>>>>>   Comparing Actual & Expected  EmployeeId
+				   
+				   
+		if(Actual_EmployeeId.equals(employeeIdNumber)) 
+		{
+			System.out.println("After saving the EmployeeId are same :-  PASS");
+			Sheet.getRow(1).createCell(27).setCellValue(Actual_EmployeeId);
+		    Sheet.getRow(1).createCell(28).setCellValue("PASS");
+		}
+		else 
+		{
+			System.out.println("After saving the EmployeeId are NOT same :- FAIL ");
+			Sheet.getRow(1).createCell(27).setCellValue("NOT Match - "+Actual_EmployeeId);
+		    Sheet.getRow(1).createCell(28).setCellValue("FAIL");
+			
+		}
+		
+	
+	
+	
+	
+	
+	
+	}
+
+	
+	//*****************************************************************************************************************************************************	
+	
+
+	@Test(priority=10,description="Validating OrangeHRM Application Personal Details Functionality Test ")
+	public void personalDetailsTest()
+	{
+
+	// validating FirstName, MiddleName, LastName , EmployeeID  and Photograph
+	// id="empPic"
+   
+	// <img alt="Employee Photo" src="/orangehrm-4.2.0.1/symfony/web/index.php/pim/viewPhoto/empNumber/0091"
+	//border="0" id="empPic" width="174" height="200">
+	
+		
+	By personalDetailsPageImageProperty=By.id("empPic");
+	WebElement personalDetailsEmployeeImage=driver.findElement(personalDetailsPageImageProperty);
+
+	boolean flag=personalDetailsEmployeeImage.isDisplayed();
+
+	if(flag)
+	{
+	System.out.println(" Employee Photograph existing - PASS ");
+	}
+	else
+	{
+	System.out.println(" Employee Photograph NOT existing - FAIL" );
+	}
+
+	
+	
+	
+	
+	
+	}
+	
+	
+	//*****************************************************************************************************************************************************	
+	
+	@Test(priority = 11,description = "Validating OrangeHRM Application Welcome Admin Functionality property")
+	public void Homepage_WelcomeAdmin() throws InterruptedException {
+		
+		
+		
+		// <a href="#" id="welcome" class="panelTrigger">Welcome Admin</a>
+		
+		By welcomeAdminProperty=By.id("welcome");
+		WebElement welcomeAdmin=driver.findElement(welcomeAdminProperty);
+		welcomeAdmin.click();
+		
+		Thread.sleep(2000);
+		
+		// <a href="/orangehrm-4.2.0.1/symfony/web/index.php/auth/logout">Logout</a>
+		
+		By logoutProperty=By.linkText("Logout");
+		WebElement logout=driver.findElement(logoutProperty);
+		logout.click();
+		
+		
+	}
+	
+	
+	
+	
+	
+	//*****************************************************************************************************************************************************	
+	
+	@Test(priority = 12,description = "Validating OrangeHRM Application After click on LogOut the current webpage ")
+	public void logInPage() throws InterruptedException, IOException {
+		
+		
+		
+
+		// validating Url
+
+		// Validating Text - LOGIN Panel
+
+		expected_OrangeHRMApplicationLogInPageText="LOGIN Panel";
+		System.out.println(" The Expected Text of the OrangeHRM Application LogIN Page is :- "+expected_OrangeHRMApplicationLogInPageText);
+
+		// id="logInPanelHeading"
+		orangeHRMApplicationLogInPageTextProperty=By.id("logInPanelHeading");
+		orangeHRMApplicationLogInPage=driver.findElement(orangeHRMApplicationLogInPageTextProperty);
+
+		actual_OrangeHRMApplicationLogInPageText=orangeHRMApplicationLogInPage.getText();
+		System.out.println(" The Actual Text of the OrangeHRM Application LogIN Page is :- "+actual_OrangeHRMApplicationLogInPageText);
+
+		if(actual_OrangeHRMApplicationLogInPageText.equals(expected_OrangeHRMApplicationLogInPageText))
+		{
+		System.out.println(" Text Found - Successfully Navigated to OrangeHRM Application LogIn Page - PASS ");
+		Sheet.getRow(1).createCell(30).setCellValue(actual_OrangeHRMApplicationLogInPageText);
+		Sheet.getRow(1).createCell(31).setCellValue("PASS");
+		}
+		else
+		{
+		System.out.println(" Expected LogIn Page Text Not Found - Failed to Navigate to OrangeHRM Application LogIn Page - FAIL");
+		Sheet.getRow(1).createCell(30).setCellValue("NOT Match  - "+actual_OrangeHRMApplicationLogInPageText);
+		Sheet.getRow(1).createCell(31).setCellValue("FAIL");
+		}
+
+
+		
+		Thread.sleep(5000);
+		
+		
+		
+
+		FileOutputStream testResultFile = new FileOutputStream("./src/com/Excel/AddEmployeeSingleData.xlsx");
+		workBook.write(testResultFile);
+
+		
+		
+	}
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,148 @@
+package com.Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Assignment2_OHRM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String applicationUrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+		
+		System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver(); 
+		
+		driver.get(applicationUrlAddress);
+		
+		
+		// Validating the WebPage 
+		   //Expected Title - OrangeHRM (should be same)
+		
+		String expected_OrangeHrmLogInPageTitle="OrangeHRM";
+		System.out.println("The Expected OrangeHrm logIn Page Title is :- "+expected_OrangeHrmLogInPageTitle);
+		
+		 // of the current webpage - identifying the Title
+		
+		String actual_OrangeHrmLogInPageTitle=driver.getTitle();
+		System.out.println("The Actual OrangeHrm LogIn Page Title is :- "+actual_OrangeHrmLogInPageTitle);
+		
+		
+		if (actual_OrangeHrmLogInPageTitle.equals(expected_OrangeHrmLogInPageTitle)) 
+		{
+			System.out.println("The Title of the OrangenHRM logIn page Matched - PASS");
+		}
+		else {
+			System.out.println("The Title of the OrangenHRM logIn page NOT Matched - FAIL");
+		}
+		
+	//	driver.close();
+		
+		System.out.println();
+		
+		//**** Expected URL - orangehrm-4.2.0.1 (should have)
+		
+		String expected_OrangeHrmLogInPageURL="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+		System.out.println("The Expected OrangeHrm LogIn page URL is :- "+expected_OrangeHrmLogInPageURL);
+		
+		 //of the current webpage - identifying the URL
+		
+		String actual_OrangeHrmLogInPageURL=driver.getCurrentUrl();
+		System.out.println("The Actual OrangeHrm LogIn page URL is :- "+actual_OrangeHrmLogInPageURL);
+		
+		if (actual_OrangeHrmLogInPageURL.equals(expected_OrangeHrmLogInPageURL)) 
+		{
+			System.out.println("Successfully Navigated to OrangeHrm LogIn Page URL Address Matched - PASS");
+		}
+		else {
+			System.out.println("Failed Navigated to OrangeHrm LogIn Page URL Address NOT Matched - FAIL");
+		}
+		
+		System.out.println();
+		
+		
+		//**** Expetced Text - LOGIN Panel (should be same)
+		
+		//<input type="submit" name="Submit" class="button" id="btnLogin" value="LOGIN">
+	
+	
+		/*
+		By logInProperty=By.className("button");
+		WebElement logIn=driver.findElement(logInProperty);
+		logIn.click();
+		*/
+		
+		String expected_OrangeHrmLogInPanel="LOGIN";
+		System.out.println("The Expected OrangeHrm logIn Page LOGIN Panel is :- "+expected_OrangeHrmLogInPanel);
+		
+ // of the current webpage - identifying the LOGIN Panel
+		
+		WebElement actual_OrangeHrmLogInPanel=driver.findElement(By.name("Submit"));
+		System.out.println("The Actual OrangeHrm LogIn Page Title is :- "+actual_OrangeHrmLogInPanel.getText());
+		
+		if (actual_OrangeHrmLogInPanel.equals(expected_OrangeHrmLogInPanel)) 
+		{
+			System.out.println("The Title of the OrangenHRM logIn page LOGIN Panel Matched - PASS");
+		}
+		else {
+			System.out.println("The Title of the OrangenHRM logIn page LOGIN Panel NOT Matched - FAIL");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

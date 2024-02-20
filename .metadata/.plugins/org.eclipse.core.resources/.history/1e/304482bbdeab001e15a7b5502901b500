@@ -1,0 +1,17 @@
+package com.BrowserAutomation;
+
+public class TestingBrowsers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	//	System.setProperty("webDriver.chrome.driver,C:\\Users\\madhu\\Desktop\\Madhu\\WebApplicationTesting\\BrowserDriverFiles\\chromedriver_win32.zip");
+		
+		System.setProperty("webDriver.chrome.Driver", "C:\\\\Users\\\\madhu\\\\Desktop\\\\Madhu\\\\WebApplicationTesting\\\\BrowserDriverFiles\\\\chromedriver_win32.zip");
+		
+		
+		
+		
+	}
+
+}

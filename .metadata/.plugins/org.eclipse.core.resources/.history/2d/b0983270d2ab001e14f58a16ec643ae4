@@ -1,0 +1,42 @@
+package com.JumpStatements;
+
+public class Example {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		for(int i=3; i<=6; i++ ) {
+			
+			//System.out.println(i+ " selenium");
+			
+			if(i==5) {
+				System.out.println(i+" webDriver");
+				//break;
+				continue;
+			}
+			System.out.println(i+ " selenium");
+			
+		}
+		
+		//continue :- continue keyword will skip current statements of the loop and will
+		           // be continuing with the rest of the iterations based on the condition
+		
+		           
+		     for(int n=0; n>=-6; n--) {
+		    	 if(n==-3){
+		    		 System.out.println(n+" kf storg ");
+		    		 
+		    	 }
+		    	System.out.println(n+" red Blue "); 
+		     }
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

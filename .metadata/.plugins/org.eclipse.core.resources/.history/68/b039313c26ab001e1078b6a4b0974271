@@ -1,0 +1,24 @@
+package com.StringComparision;
+
+public class StringExample2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+        String var1="Madhu";
+        String var2="Madhu";
+        if(var1.equals(var2)){
+        	System.out.println("var1 variable value is EQUAL to var2 variable value");
+        }
+        else
+        {
+        	System.out.println("var1 variable value is NOT EQUAL to var2 variable value");
+        }
+
+
+		
+		
+		
+	}
+
+}

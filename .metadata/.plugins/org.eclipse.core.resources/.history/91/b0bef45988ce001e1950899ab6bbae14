@@ -1,0 +1,123 @@
+package OrangeHRMApplicationPages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.BaseTest.BaseTest;
+import com.Utility.Log;
+
+public class LogInPage extends BaseTest{
+	
+	
+
+	// Object Repository Class
+
+	// <div id="logInPanelHeading">LOGIN Panel</div>
+
+	// WebElement logInPanelText=driver.findElement(By.id("logInPanelHeading"));
+
+	// 1. Identification of WebElements
+	// 2.  Performing Operation on the WebElements - Business Logics
+
+	// @FindBy - is an Annotion - works similar to findElement method
+	
+	
+	
+
+	 public LogInPage() // Constructor - When  a class Name is similar to the Method Name
+	 {
+		// TODO Auto-generated constructor stub
+		 
+		 
+		PageFactory.initElements(driver, this); 
+		 
+		 
+	}
+	
+	
+	
+	// <div id="logInPanelHeading">LOGIN Panel</div>
+	
+	// 1. Identification of WebElements
+	@FindBy(id="logInPanelHeading")
+	WebElement logInPanelText;
+	
+	// 2. Performing Operation on the WebElement - Business Logics(user defined method)
+	
+	
+	public void orangeHRMApplicationLogInPage_logInPannelTextValidation() {
+		
+		
+		String expected_OrangeHRMApplicationLogInPageLogINPannelText="LOGIN Panel";
+		Log.info(" The Expected Text of the WebElement LogIn Pannel is :-  "+expected_OrangeHRMApplicationLogInPageLogINPannelText);
+		
+		
+		String actual_OrangeHRMApplicationLogInPageLogInPannelText=logInPanelText.getText();
+		Log.info(" The Expected Text of the WebElement LogIn Pannel is :-  "+actual_OrangeHRMApplicationLogInPageLogInPannelText);
+		
+		if(actual_OrangeHRMApplicationLogInPageLogInPannelText.equals(expected_OrangeHRMApplicationLogInPageLogINPannelText)) {
+			
+			Log.info(" LogIn pannel Text Validation Successful - PASS ");
+		}
+		else {
+			Log.info(" LogIn Pannel Text Validation NOT Successful - FAIL ");
+		}
+		
+		
+		
+	}
+	
+	
+	// /html/body/div[1]/div/div[2]/div/img
+	
+	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div/img")
+	WebElement orangeHRMApplicationLogInPageLogo;
+	
+	public void orangeHRMApplicationLogInPageLogoValidation() {
+		
+		boolean flag=orangeHRMApplicationLogInPageLogo.isDisplayed();
+		
+		if(flag) {
+			
+			Log.info(" OrangeHRM Application LogIn page Logo Found - PASS ");
+			
+		}
+		else {
+			Log.info(" OrangeHRM Application LogIn Page Logo NOT Found - FAIL");
+		}
+		
+		
+		
+	}
+	
+	
+	// id="txtUsername"
+	@FindBy(id = "txtUsername")
+	WebElement userName;
+
+	// name="txtPassword"
+	@FindBy(name = "txtPassword")
+	WebElement password;
+	
+	// class="button"
+	@FindBy(className = "button")
+	WebElement logInButton;
+	
+	
+	
+	public void orangeHRMApplicationLodInPage_logInValidation(String UserName,String Password) {
+		
+	   userName.sendKeys(UserName);
+	   password.sendKeys(Password);	
+	   logInButton.click();
+	   
+	   
+	   
+	   
+	   
+	}
+	
+	
+
+}

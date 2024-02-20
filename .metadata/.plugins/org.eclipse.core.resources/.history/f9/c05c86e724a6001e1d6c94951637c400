@@ -1,0 +1,68 @@
+package com.VariableExample;
+
+public class VariableExamples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		short shortvariable=21;
+		System.out.println("the value of variable shortvariable is:-" +shortvariable);
+		short Nikky=07;
+		System.out.println("the value of variable is:-" +Nikky);
+		
+		System.out.println(Nikky);
+		System.out.println(shortvariable);
+		
+		short chinttu=100;
+		System.out.println("the value of variable is:-"+chinttu);
+		System.out.println(chinttu);
+		System.out.println(Nikky);
+		System.out.println(shortvariable);
+		System.out.println("the value of variable is:-"+shortvariable);
+		short shortgirl=5;
+		short longboy=6;
+		System.out.println("the value of variable is:-"+longboy);
+		System.out.println(longboy);
+		System.out.println(shortgirl);
+		System.out.println("the value of variable is:-"+shortgirl);
+		System.out.println(); 
+		
+		System.out.println();
+		
+		int intvariable=65;
+		System.out.println("the value of the varible intvariable is:-"+intvariable);
+		System.out.println(intvariable);
+		intvariable=21;
+		System.out.println("the value of the variable intervariable is:-"+intvariable);
+		System.out.println(intvariable);
+		
+		System.out.println();
+		
+		long longvariable=99;
+		System.out.println("the value of the variable longvarible is:-"+longvariable);
+		System.out.println(longvariable);
+		long longvariable1=88;
+		System.out.println(longvariable1);
+		System.out.println("the value of the variable longvariable1 is:-"+longvariable1);
+		
+		System.out.println();
+	
+		byte bytevariable=88;
+		System.out.println("the value of the variable  bytevariable is:-"+bytevariable);
+		System.out.println(bytevariable);
+		bytevariable=74;
+		System.out.println("the value of the variable bytevariable is:-"+bytevariable);
+		System.out.println(bytevariable);
+		
+		System.out.println();
+		
+		double doublevariable=1.123456789123467;
+		System.out.println("the value of the variable doublevariable is:-"+doublevariable);
+		// double point values range mix 14 or 15
+		System.out.println(doublevariable);
+		doublevariable=100;
+		System.out.println("the valueb of the variable doublevariable is:-"+doublevariable);
+		System.out.println(doublevariable);
+
+	}
+
+}

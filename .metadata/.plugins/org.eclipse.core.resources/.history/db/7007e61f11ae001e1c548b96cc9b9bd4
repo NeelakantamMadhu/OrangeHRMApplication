@@ -1,0 +1,30 @@
+package com.ApplicationLaunch;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class NavigativeTo_Bing_Homepage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 //Automating Chrome Browser
+		
+		System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+		  //Object      Class
+		ChromeDriver chromebrowser=new ChromeDriver();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

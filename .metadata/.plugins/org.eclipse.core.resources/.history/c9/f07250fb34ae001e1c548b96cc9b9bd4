@@ -1,0 +1,44 @@
+package com.ValidatingURLAddress;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ValidatingURLAddress {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Automating ChromeBrowser
+		
+				System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+				
+			    ChromeDriver chromeBrowser =new ChromeDriver();
+			   
+			    //Navigating to Google Application HomePage
+					
+				chromeBrowser.get("http:// google.com");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

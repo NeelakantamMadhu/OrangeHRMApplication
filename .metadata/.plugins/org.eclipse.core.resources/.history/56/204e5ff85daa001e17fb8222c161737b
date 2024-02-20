@@ -1,0 +1,25 @@
+package com.Lopps;
+
+public class NestedLoopsExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		for (int a=0; a<2; a++) //outer Loop
+		{System.out.println("The current value of the variable a is ="+a);
+			for (int b=1; b<=2; b++) //inner Loop
+			{
+				System.out.println(a+" "+"selenium");
+				System.out.println(b+" "+"madhu");
+				//System.out.println("The current value of the variable a is ="+a);
+				System.out.println();
+				System.out.println("The current value of the variable b is ="+b);
+			}
+			//System.out.println("The current value of the variable a is ="+a);
+		
+					
+		}
+		
+	}
+
+}

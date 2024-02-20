@@ -1,0 +1,32 @@
+package OrangeHRMApplicationPages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.BaseTest.BaseTest;
+
+public class LogInPage extends BaseTest{
+	
+	
+	
+	
+	// <div id="logInPanelHeading">LOGIN Panel</div>
+	
+	// 1. Identification of WebElements
+	@FindBy(id="logInPanelHeading")
+	WebElement logInPanelHeading;
+	
+	public void orangeHRMApplicationLogInPage_logInPannelTextValidation() {
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+
+}

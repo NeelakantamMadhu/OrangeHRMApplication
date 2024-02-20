@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-15T22:59:33 IST" name="Default suite" finished-at="2024-02-15T23:00:34 IST" duration-ms="60581">
+    <groups>
+    </groups>
+    <test started-at="2024-02-15T22:59:33 IST" name="Default test" finished-at="2024-02-15T23:00:34 IST" duration-ms="60581">
+      <class name="com.RadioButtonsTesting.EchoEchoApplication_All_RadioButtonsTesting">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.RadioButtonsTesting.EchoEchoApplication_All_RadioButtonsTesting@4dbb42b7]" started-at="2024-02-15T22:59:33 IST" name="setUp" finished-at="2024-02-15T22:59:41 IST" duration-ms="7675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="group1and2_RadioButtonTesting()[pri:0, instance:com.RadioButtonsTesting.EchoEchoApplication_All_RadioButtonsTesting@4dbb42b7]" started-at="2024-02-15T22:59:41 IST" name="group1and2_RadioButtonTesting" finished-at="2024-02-15T23:00:33 IST" duration-ms="52136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- group1and2_RadioButtonTesting -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.RadioButtonsTesting.EchoEchoApplication_All_RadioButtonsTesting@4dbb42b7]" started-at="2024-02-15T23:00:33 IST" name="tearDown" finished-at="2024-02-15T23:00:34 IST" duration-ms="708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.RadioButtonsTesting.EchoEchoApplication_All_RadioButtonsTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

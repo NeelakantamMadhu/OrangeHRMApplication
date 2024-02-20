@@ -1,0 +1,124 @@
+package com.Assignment;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Assignment2_OHRM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String applicationUrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+		
+		System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver(); 
+		
+		driver.get(applicationUrlAddress);
+		
+		
+		// Validating the WebPage 
+		   //Expected Title - OrangeHRM (should be same)
+		
+		String expected_OrangeHrmLogInPageTitle="OrangeHRM";
+		System.out.println("The Expected OrangeHrm logIn Page Title is :- "+expected_OrangeHrmLogInPageTitle);
+		
+		 // of the current webpage - identifying the Title
+		
+		String actual_OrangeHrmLogInPageTitle=driver.getTitle();
+		System.out.println("The Actual OrangeHrm LogIn Page Title is :- "+actual_OrangeHrmLogInPageTitle);
+		
+		
+		if (actual_OrangeHrmLogInPageTitle.equals(expected_OrangeHrmLogInPageTitle)) 
+		{
+			System.out.println("The Title of the OrangenHRM logIn page Matched - PASS");
+		}
+		else {
+			System.out.println("The Title of the OrangenHRM logIn page NOT Matched - FAIL");
+		}
+		
+		driver.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

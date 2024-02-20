@@ -1,0 +1,8 @@
+package com.StringComparision;
+
+public class StringExample {
+public static void main(String[] args) {
+	int var='s';
+	System.out.println("the value of the variable var is :-"+var);
+}
+}

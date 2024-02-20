@@ -1,0 +1,80 @@
+package com.Lopps;
+public class NestedLoopsExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		for (int a=0; a<2; a++) //outer Loop
+		{System.out.println("The current value of the variable a is ="+a);
+			for (int b=1; b<=2; b++) //inner Loop
+			{
+				//System.out.println(a+" "+" selenium");
+				System.out.println(b+" "+"madhu");
+				
+				System.out.println();
+				//System.out.println("The current value of the variable b is ="+b);
+			}
+		}
+		System.out.println("________________________________");
+		System.out.println();
+		
+		for(int a=5; a<9; a++)  
+		{System.out.println("The current value of the variable a is ="+a);
+				for(int b=3; b<=8; b++) 
+				{//System.out.println(a+"madhu" );
+				System.out.println("sai"+a+b);
+				
+			}
+		}
+		System.out.println("________________________________");
+		System.out.println();
+		
+		for(int a=8; a>-20; a=a-4) 
+		{System.out.println("The current value of the variable a is ="+a);
+			for(int b=-1; b>-18; b=b-6)
+			{
+				System.out.println("ammu "+a+b);
+				//System.out.println("The current value of the variable a is ="+b);
+				}
+			System.out.println();
+		}
+		System.out.println("________________________________");
+		System.out.println();
+		
+		
+		for(int a=2; a>-6; a=a-2) 
+		{System.out.println("The current value of the variable a is ="+a);
+			for(int b=1; b<=5; b=b+1 )
+			{
+				System.out.print(a+" a ");
+				System.out.println(b+" b ");
+			}System.out.println();
+			
+		}
+		System.out.println("________________________________");
+		System.out.println();
+		
+		for(int index1=5; index1>=1; index1--)
+		{System.out.println("the current value of the variable index1 is"+index1);
+			for(int index2=1; index2<index1; index2++) {
+				System.out.print(index1+"  ");
+			}
+		}
+		System.out.println("________________________________");
+		System.out.println();
+		
+		for(int a=5; a>=0; a--) {
+			for(int b=a; b>0; b--) {
+				System.out.println(a+" ");
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,80 @@
+package com.OrangeHRM;
+
+import java.sql.Driver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class OrangeHRM_LonInTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String applicationURLAddress="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+                  //Automating chromebrowser
+		System.setProperty("webdriver.chrome.driver","./BrowserDriverFiles/chromedriver.exe");
+		
+		ChromeDriver driver=new ChromeDriver();
+		
+	     driver.get(applicationURLAddress);
+	     
+	     String expected_OrangeHRMApplicationLogInPageTitle="OrangeHRM";
+	     System.out.println("The expetced title of the OrangeHRM Application LogIn page is :-"+expected_OrangeHRMApplicationLogInPageTitle);
+	     
+	     String Actual_OrangeHRMApplicationLogInPageTitle=driver.getTitle();
+	     System.out.println("The Actual title of the OrangeHRM Application LogIn page is :-"+Actual_OrangeHRMApplicationLogInPageTitle);
+	     
+	     if (Actual_OrangeHRMApplicationLogInPageTitle.equals(expected_OrangeHRMApplicationLogInPageTitle)) 
+	     {
+			System.out.println("Successfully Navigated to OrangeHRM Application LogIn webpage is- PASS");
+	    	}
+	     else {
+			System.out.println("Failed to Navigated to OrangeHRM Application logIn webpage is- FAIL");
+		}
+	     
+		
+		/*
+		 
+		
+		<input class="oxd-input oxd-input--active" name="username" placeholder="Username" autofocus="" data-v-1f99f73c="">
+		
+		
+		< - Tag
+		input - Tag Name
+		
+		name - Attribute / locator
+		username - Corresponding value /selector
+		
+		
+		
+		*/
+		
+		// 1 Identifying the Element of the webpage - done using the properites
+		
+		driver.findElement(By.id("username")).sendKeys("madhu");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

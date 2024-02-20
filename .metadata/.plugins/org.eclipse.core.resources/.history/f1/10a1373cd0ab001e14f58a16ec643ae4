@@ -1,0 +1,32 @@
+package com.JumpStatements;
+
+public class Example {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		for(int i=3; i<=6; i++ ) {
+			
+			//System.out.println(i+ " selenium");
+			
+			if(i==5) {
+				System.out.println(i+" webDriver");
+				//break;
+			}
+			System.out.println(i+ " selenium");
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

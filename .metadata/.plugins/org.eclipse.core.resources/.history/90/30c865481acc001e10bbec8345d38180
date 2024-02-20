@@ -1,0 +1,33 @@
+package com.RadioButtonsTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+
+
+
+public class BaseTest {
+	
+	
+
+	public WebDriver driver;
+	String applictaionUrlAddress="https://echoecho.com/htmlforms10.htm";
+	
+	@BeforeTest
+	public void setUp() {
+		
+		System.setProperty("webdriver.chrome.driver", "./BrowserDriverFiles/chromedriver.exe");
+        driver=new ChromeDriver();
+		 
+		 driver.get(applictaionUrlAddress);
+		 driver.manage().window().maximize();
+	}
+	
+	
+	public void tearDown() {
+		
+		driver.quit();
+		
+	}
+
+}

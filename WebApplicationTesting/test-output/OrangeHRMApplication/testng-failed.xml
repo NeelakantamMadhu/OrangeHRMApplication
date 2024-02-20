@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [OrangeHRMApplication]">
+  <test thread-count="5" parallel="tests" name="AddEmployeeTest(failed)">
+    <classes>
+      <class name="com.OrangeHRMApplication.AddEmployeeTest">
+        <methods>
+          <include name="pimTest"/>
+          <include name="homePageTest"/>
+          <include name="AddEmployeeWebPageTest"/>
+          <include name="logInTest"/>
+          <include name="AddEmployeeTest"/>
+          <include name="setUp"/>
+          <include name="AddEmployee_TestFileds"/>
+          <include name="pimAddEmployeeTest"/>
+          <include name="Homepage_WelcomeAdmin"/>
+          <include name="personalDetailsTest"/>
+          <include name="tearDown"/>
+          <include name="logInPage"/>
+          <include name="personalDetailsWebPageTest"/>
+          <include name="logInPageTest"/>
+        </methods>
+      </class> <!-- com.OrangeHRMApplication.AddEmployeeTest -->
+    </classes>
+  </test> <!-- AddEmployeeTest(failed) -->
+  <test thread-count="5" parallel="tests" name="LogInTest(failed)">
+    <classes>
+      <class name="com.config.LogInTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="homePageTest"/>
+          <include name="tearDown"/>
+          <include name="logOutTest"/>
+          <include name="logInTest"/>
+          <include name="logInPageTest"/>
+        </methods>
+      </class> <!-- com.config.LogInTest -->
+    </classes>
+  </test> <!-- LogInTest(failed) -->
+</suite> <!-- Failed suite [OrangeHRMApplication] -->

@@ -1,0 +1,45 @@
+package com.DropDown;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class OsmaniaUniversity_SelectLanguage {
+	
+	public static void main(String[] args) {
+		
+	WebDriver driver;
+	String applicationUrlAddress="https://www.osmania.ac.in/";
+	
+	
+	System.setProperty("webdriver.chrome.driver", "./BrowserDriverFiles/chromedriver.exe");
+	driver= new ChromeDriver();
+	driver.get(applicationUrlAddress);
+	
+	//Maximizing the Browser
+	driver.manage().window().maximize();
+	
+	
+	// Identifying the Select Languages DropDown Property
+	//
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+	
+
+}

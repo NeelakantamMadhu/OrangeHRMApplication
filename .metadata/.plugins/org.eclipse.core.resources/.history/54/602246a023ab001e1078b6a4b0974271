@@ -1,0 +1,20 @@
+package com.StringComparision;
+
+public class StringExample {
+public static void main(String[] args) {
+	int var='n';
+	System.out.println("the value of the variable var is :-"+var);
+	char charvariable='s';
+	System.out.println("the value of the variable charvariable is:-"+charvariable);
+	double doublevar='b';
+	System.out.println("the value of the variable doublevar is :-"+doublevar);
+	float floatvar='i';
+	System.out.println("the value of the variable floatvar is :-"+floatvar);
+	long longvar='k';
+	System.out.println("the value of the variable longvar is :-"+longvar);
+	byte bytevar='e';
+	System.out.println("the value of the variable bytevar is :-"+bytevar);
+	
+	
+}
+}

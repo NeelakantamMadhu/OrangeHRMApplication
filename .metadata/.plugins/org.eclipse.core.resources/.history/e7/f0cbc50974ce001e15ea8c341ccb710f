@@ -1,0 +1,75 @@
+package com.StepDefination;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.Utility.Log;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class OrangeHRMApplication_UserDefinedMethods {
+	
+	WebDriver driver;
+	String applicationUrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+	
+	@Given("User should open Browser in the System")
+	public void user_should_open_browser_in_the_system() {
+	  System.setProperty("webdriver.chrome.driver", "./BrowserDriverFiles/chromedriver.exe");
+	  driver=new ChromeDriver();
+	  
+	 Log.info("********** Chrome Browser launched Successfully *********"); 
+	  
+	  
+	}
+
+	@When("User enter OrangeHRM Application URL Address")
+	public void user_enter_orange_hrm_application_url_address() {
+		
+		driver.get(applicationUrlAddress);
+		Log.info("******* Sucessfully Provided OrangeHRM Application Url Address on the Browser ***********");
+		
+		driver.manage().window().maximize();
+	    
+	}
+
+	@Then("User should be navigated to OrangeHRM Application LogIn WebPage")
+	public void user_should_be_navigated_to_orange_hrm_application_log_in_web_page() {
+		
+		// name="txtUsername"
+		String userNameTestData="Madhu";//Test Data
+		By userNameProperty =By.className("txtUsername"); // Property of an element is identified and assigned to a variable 
+		WebElement userName=driver.findElement(userNameProperty);// finding a WebElement with the property in the current WebPage
+		userName.sendKeys(userNameTestData);// Performing an operation on the identified WebElement 
+		
+		// name="txtPassword"
+		String passwordTestData="Livetech@123";
+		By passwordProperty=By.className("txtPassword");
+	    WebElement password=driver.findElement(passwordProperty);
+	    password.sendKeys(passwordTestData);
+	    
+	    // id="btnLogin"
+	    By logInButtonProperty=By.id("btnLogin");
+	    WebElement logInButton=driver.findElement(logInButtonProperty);
+	    logInButton.click();
+	    
+	}
+
+	@Then("User should close the OrangeHRM Application along with the browser")
+	public void user_should_close_the_orange_hrm_application_along_with_the_browser() {
+	    
+		driver.close();
+		
+		Log.info(" ***********  OrangeHRM Application along with the Browser closed Successfully ***********");
+		
+		
+		
+	}
+	
+	
+	
+
+}

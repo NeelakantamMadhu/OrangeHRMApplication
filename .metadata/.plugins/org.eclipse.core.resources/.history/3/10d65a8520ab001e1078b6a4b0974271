@@ -1,0 +1,14 @@
+package com.StringExample;
+
+public class StringExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int var='a';
+		System.out.println("The value of the variable var is :-"+var);
+		char charvariable='A';
+		System.out.println("The value of the variable charvariable is :");
+	}
+
+}

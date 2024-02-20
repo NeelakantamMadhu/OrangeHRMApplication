@@ -1,0 +1,29 @@
+package com.DropDown;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DropDown_GetOptionaValues {
+
+	
+	WebDriver driver;
+	
+	
+	
+	public void applicationLaunch() {
+	
+		System.setProperty("webdriver.chrome.driver", "./BrowserDriverFiles/chromedriver.exe");
+		driver=new ChromeDriver();                   ///BrowserDriverFiles/chromedriver.exe   
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		DropDown_GetOptionaValues osmaniaUniversity=new DropDown_GetOptionaValues();
+		
+		osmaniaUniversity.applicationLaunch();
+	}
+	
+	
+}

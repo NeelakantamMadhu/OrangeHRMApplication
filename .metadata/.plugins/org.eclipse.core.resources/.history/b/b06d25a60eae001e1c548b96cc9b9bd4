@@ -1,0 +1,52 @@
+package com.BrowserAutomation;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
+
+public class TestingBrowser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	/*	//Automating Chrome Browser
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\madhu\\Desktop\\Madhu\\WebApplicationTesting\\BrowserDriverFiles\\chromedriver.exe" );
+		//class        object
+		ChromeDriver madhu=new ChromeDriver();
+				
+		
+		
+		
+		
+		
+		//Automating Edge Browser
+		
+		System.setProperty("webdriver.edge.driver","./BrowserDriverFiles/msedgedriver.exe");
+		
+		EdgeDriver chandu=new EdgeDriver();
+		
+		*/
+		
+		//Automating FireFox Browser
+		
+		System.setProperty("webdriver.gecko.driver","./BrowserDriverFiles/geckodriver.exe");
+		
+		 FirefoxDriver firefox =new FirefoxDriver();
+		
+		
+		
+		
+		
+		System.setProperty("webdriver.opera.driver","./BrowserDriverFiles/operadriver.exe");
+				
+		
+		
+		OperaDriver ram=new OperaDriver();
+		
+		//System.out.println();
+		
+	}
+
+}

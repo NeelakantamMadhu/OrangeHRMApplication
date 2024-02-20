@@ -1,0 +1,26 @@
+package com.BaseTest;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.server.handler.WebDriverHandler;
+import org.testng.annotations.Test;
+
+public class LanuchBrowser {
+	
+	
+	WebDriver driver;
+	String applictaionUrlAddress="https://echoecho.com/htmlforms10.htm";
+	 
+	
+	@Test
+	public void setUp() {
+		
+		System.setProperty("webdriver.chrome.driver", "./BrowserDriverFiles/chromedriver.exe");
+		 driver=new ChromeDriver();
+		 
+		 driver.get(applictaionUrlAddress);
+		 driver.manage().window().maximize();
+		 
+	}
+
+}

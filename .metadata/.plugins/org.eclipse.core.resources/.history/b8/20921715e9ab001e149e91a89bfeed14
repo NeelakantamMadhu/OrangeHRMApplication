@@ -1,0 +1,19 @@
+package com.BrowserAutomation;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestingBrowsers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	//	System.setProperty("webDriver.chrome.driver,C:\\Users\\madhu\\Desktop\\madhu\\WebApplicationTesting\\BrowserDriverFiles\\chromedriver_win32.zip");
+		
+		System.setProperty("webDriver.chrome.Driver", "C:\\Users\\madhu\\Desktop\\Madhu\\WebApplicationTesting\\BrowserDriverFiles\\chromedriver-win64\\chromedriver.exe");
+		
+		ChromeDriver madhu=new ChromeDriver();
+		
+		
+	}
+
+}
